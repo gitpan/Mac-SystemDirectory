@@ -1,0 +1,10 @@
+Revision history for Perl extension Mac::SystemDirectory.
+
+0.02_01  Wed Sep 30 23:22:16 2009
+    - Added support for DomainMask
+    - Added support for returning multiple dirctories
+
+0.01  Wed Sep 30 23:22:16 2009
+    - original version; created by h2xs 1.23 with options
+        -A -b 5.6.0 --skip-ppport -c -n Mac::SystemDirectory
+
