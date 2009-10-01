@@ -1,19 +1,25 @@
---- #YAML:1.0
-name:               Mac-SystemDirectory
-version:            0.02_01
-abstract:           Locate Mac OS X Standard System Directories
+---
+abstract: 'Locate Mac OS X Standard System Directories'
 author:
-    - Christian Hansen <chansen@cpan.org>
-license:            unknown
-distribution_type:  module
+  - 'Christian Hansen, <chansen@cpan.org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
 configure_requires:
-    ExtUtils::MakeMaker:  0
-requires:  {}
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.48
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.91'
+license: perl
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+module_name: Mac::SystemDirectory
+name: Mac-SystemDirectory
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  perl: 5.6.0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.02_02

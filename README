@@ -18,225 +18,291 @@ DESCRIPTION
 
 FUNCTIONS
 
-  FindDirectory(Directory [, DomainMask])
+    FindDirectory(Directory [, DomainMask])
 
-    *Usage*
-
-
-        $path  = FindDirectory(NSApplicationDirectory);
-        @paths = FindDirectory(NSApplicationDirectory);
+        *Usage*
 
 
-    *Arguments*
+            $path  = FindDirectory(NSApplicationDirectory);
+            @paths = FindDirectory(NSApplicationDirectory);
 
 
-    "Directory"
-
-        "Directory" constant.
+        *Arguments*
 
 
-    "DomainMask" (optional)
+        "Directory"
 
-        "DomainMask" constant. Defaults to "NSUserDomainMask".
-
-
-    *Returns*
+            "Directory" constant.
 
 
-    When called in scalar context this function returns the first matching
-    directory. In list context it returns all matching directories. If no
-    directories are found, undef is returned in a scalar context and an
-    empty list in a list context.
+        "DomainMask" (optional)
+
+            "DomainMask" constant. Defaults to "NSUserDomainMask".
+
+
+        *Returns*
+
+
+        When called in scalar context this function returns the first
+        matching directory. In list context it returns all matching
+        directories. If no directories are found, undef is returned in a
+        scalar context and an empty list in a list context.
 
 
 CONSTANTS
 
   DomainMask
 
-   NSUserDomainMask
+    NSUserDomainMask
 
-    The user’s home directory—the place to install user’s personal
-    items (~). Available in Mac OS X v10.0 and later.
-
-
-   NSLocalDomainMask
-
-    Local to the current machine—the place to install items available to
-    everyone on this machine. Available in Mac OS X v10.0 and later.
+        The user's home directory-the place to install user's personal items
+        (~).
 
 
-   NSNetworkDomainMask
-
-    Publicly available location in the local area network—the place to
-    install items available on the network (/Network). Available in Mac OS X
-    v10.0 and later.
+        Available in Mac OS X v10.0 and later.
 
 
-   NSSystemDomainMask
+    NSLocalDomainMask
 
-    Provided by Apple — can’t be modified (/System). Available in Mac OS
-    X v10.0 and later.
+        Local to the current machine-the place to install items available to
+        everyone on this machine.
 
 
-   NSAllDomainsMask
+        Available in Mac OS X v10.0 and later.
 
-    All domains. Includes all of the above and future items. Available in
-    Mac OS X v10.0 and later.
+
+    NSNetworkDomainMask
+
+        Publicly available location in the local area network-the place to
+        install items available on the network (/Network).
+
+
+        Available in Mac OS X v10.0 and later.
+
+
+    NSSystemDomainMask
+
+        Provided by Apple - can't be modified (/System).
+
+
+        Available in Mac OS X v10.0 and later.
+
+
+    NSAllDomainsMask
+
+        All domains. Includes all of the above and future items.
+
+
+        Available in Mac OS X v10.0 and later.
 
 
   Directory
 
-   NSApplicationDirectory
+    NSApplicationDirectory
 
-    Supported applications (/Applications). Available in Mac OS X v10.0 and
-    later.
+        Supported applications (/Applications).
 
 
-   NSDemoApplicationDirectory
+        Available in Mac OS X v10.0 and later.
 
-    Unsupported applications and demonstration versions. Available in Mac OS
-    X v10.0 and later.
 
+    NSDemoApplicationDirectory
 
-   NSDeveloperApplicationDirectory
+        Unsupported applications and demonstration versions.
 
-    Developer applications (/Developer/Applications). Available in Mac OS X
-    v10.0 and later.
 
+        Available in Mac OS X v10.0 and later.
 
-   NSAdminApplicationDirectory
 
-    System and network administration applications. Available in Mac OS X
-    v10.0 and later.
+    NSDeveloperApplicationDirectory
 
+        Developer applications (/Developer/Applications).
 
-   NSLibraryDirectory
 
-    Various user-visible documentation, support, and configuration files
-    (/Library). Available in Mac OS X v10.0 and later.
+        Available in Mac OS X v10.0 and later.
 
 
-   NSDeveloperDirectory
+    NSAdminApplicationDirectory
 
-    Developer resources (/Developer). Deprecated: Beginning with Xcode 3.0,
-    developer tools can be installed in any location. Available in Mac OS X
-    v10.0 and later.
+        System and network administration applications.
 
 
-   NSUserDirectory
+        Available in Mac OS X v10.0 and later.
 
-    User home directories (/Users). Available in Mac OS X v10.0 and later.
 
+    NSLibraryDirectory
 
-   NSDocumentationDirectory
+        Various user-visible documentation, support, and configuration files
+        (/Library).
 
-    Documentation. Available in Mac OS X v10.0 and later.
 
+        Available in Mac OS X v10.0 and later.
 
-   NSDocumentDirectory
 
-    Document directory. Available in Mac OS X v10.2 and later.
+    NSDeveloperDirectory
 
+        Developer resources (/Developer). Deprecated: Beginning with Xcode
+        3.0, developer tools can be installed in any location.
 
-   NSCoreServiceDirectory
 
-    Location of core services (System/Library/CoreServices). Available in
-    Mac OS X v10.4 and later.
+        Available in Mac OS X v10.0 and later.
 
 
-   NSAutosavedInformationDirectory
+    NSUserDirectory
 
-    Location of user’s autosaved documents Documents/Autosaved Available
-    in Mac OS X v10.6 and later.
+        User home directories (/Users).
 
 
-   NSDesktopDirectory
+        Available in Mac OS X v10.0 and later.
 
-    Location of user’s desktop directory. Available in Mac OS X v10.4 and
-    later.
 
+    NSDocumentationDirectory
 
-   NSCachesDirectory
+        Documentation.
 
-    Location of discardable cache files (Library/Caches). Available in Mac
-    OS X v10.4 and later.
 
+        Available in Mac OS X v10.0 and later.
 
-   NSApplicationSupportDirectory
 
-    Location of application support files (Library/Application Support).
-    Available in Mac OS X v10.4 and later.
+    NSDocumentDirectory
 
+        Document directory.
 
-   NSDownloadsDirectory
 
-    Location of the user’s downloads directory. Available in Mac OS X
-    v10.5 and later.
+        Available in Mac OS X v10.2 and later.
 
 
-   NSInputMethodsDirectory
+    NSCoreServiceDirectory
 
-    Location of Input Methods (Library/Input Methods) Available in Mac OS X
-    v10.6 and later.
+        Location of core services (System/Library/CoreServices).
 
 
-   NSMoviesDirectory
+        Available in Mac OS X v10.4 and later.
 
-    Location of user's Movies directory (~/Movies) Available in Mac OS X
-    v10.6 and later.
 
+    NSAutosavedInformationDirectory
 
-   NSMusicDirectory
+        Location of user's autosaved documents Documents/Autosaved
 
-    Location of user's Movies directory (~/Music) Available in Mac OS X
-    v10.6 and later.
 
+        Available in Mac OS X v10.6 and later.
 
-   NSPicturesDirectory
 
-    Location of user's Movies directory (~/Pictures) Available in Mac OS X
-    v10.6 and later.
+    NSDesktopDirectory
 
+        Location of user's desktop directory.
 
-   NSPrinterDescriptionDirectory
 
-    Location of system's PPDs directory (Library/Printers/PPDs) Available in
-    Mac OS X v10.6 and later.
+        Available in Mac OS X v10.4 and later.
 
 
-   NSSharedPublicDirectory
+    NSCachesDirectory
 
-    Location of user's Public sharing directory (~/Public) Available in Mac
-    OS X v10.6 and later.
+        Location of discardable cache files (Library/Caches).
 
 
-   NSPreferencePanesDirectory
+        Available in Mac OS X v10.4 and later.
 
-    Location of the PreferencePanes directory for use with System
-    Preferences (Library/PreferencePanes) Available in Mac OS X v10.6 and
-    later.
 
+    NSApplicationSupportDirectory
 
-   NSItemReplacementDirectory
+        Location of application support files (Library/Application Support).
 
-    For use with NSFileManager method
-    URLForDirectory:inDomain:appropriateForURL:create:error: Available in
-    Mac OS X v10.6 and later.
 
+        Available in Mac OS X v10.4 and later.
 
-   NSAllApplicationsDirectory
 
-    All directories where applications can occur. Available in Mac OS X
-    v10.0 and later.
+    NSDownloadsDirectory
 
+        Location of the user's downloads directory.
 
-   NSAllLibrariesDirectory
 
-    All directories where resources can occur. Available in Mac OS X v10.0
-    and later.
+        Available in Mac OS X v10.5 and later.
 
 
-  EXPORT
+    NSInputMethodsDirectory
+
+        Location of Input Methods (Library/Input Methods)
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSMoviesDirectory
+
+        Location of user's Movies directory (~/Movies)
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSMusicDirectory
+
+        Location of user's Movies directory (~/Music)
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSPicturesDirectory
+
+        Location of user's Movies directory (~/Pictures)
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSPrinterDescriptionDirectory
+
+        Location of system's PPDs directory (Library/Printers/PPDs)
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSSharedPublicDirectory
+
+        Location of user's Public sharing directory (~/Public)
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSPreferencePanesDirectory
+
+        Location of the PreferencePanes directory for use with System
+        Preferences (Library/PreferencePanes)
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSItemReplacementDirectory
+
+        For use with NSFileManager method
+        URLForDirectory:inDomain:appropriateForURL:create:error:
+
+
+        Available in Mac OS X v10.6 and later.
+
+
+    NSAllApplicationsDirectory
+
+        All directories where applications can occur.
+
+
+        Available in Mac OS X v10.0 and later.
+
+
+    NSAllLibrariesDirectory
+
+        All directories where resources can occur.
+
+
+        Available in Mac OS X v10.0 and later.
+
+
+EXPORT
 
     None by default. Functions and constants can either be imported
     individually or in sets grouped by tag names. The tag names are:

@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 BEGIN {
-    our $VERSION     = '0.02_01';
+    our $VERSION     = '0.02_02';
     our @EXPORT_OK   = ( 'FindDirectory' );
 
     require XSLoader;
@@ -40,7 +40,9 @@ Locate Mac OS X Standard System Directories
 
 =head1 FUNCTIONS
 
-=head2 FindDirectory(Directory [, DomainMask])
+=over 4
+
+=item FindDirectory(Directory [, DomainMask])
 
 I<Usage>
 
@@ -68,165 +70,204 @@ directory. In list context it returns all matching directories.
 If no directories are found, undef is returned in a scalar context and an 
 empty list in a list context.
 
+=back
+
 =head1 CONSTANTS
 
 =head2 DomainMask
 
-=head3 NSUserDomainMask
+=over 4
 
-The user’s home directory—the place to install user’s personal items (~).
+=item NSUserDomainMask
+
+The user's home directory-the place to install user's personal items (~).
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSLocalDomainMask
+=item NSLocalDomainMask
 
-Local to the current machine—the place to install items available to everyone on this machine.
+Local to the current machine-the place to install items available to everyone on this machine.
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSNetworkDomainMask
+=item NSNetworkDomainMask
 
-Publicly available location in the local area network—the place to install items available on the network (/Network).
+Publicly available location in the local area network-the place to install items available on the network (/Network).
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSSystemDomainMask
+=item NSSystemDomainMask
 
-Provided by Apple — can’t be modified (/System).
+Provided by Apple - can't be modified (/System).
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSAllDomainsMask
+=item NSAllDomainsMask
 
-All domains.
-Includes all of the above and future items.
+All domains. Includes all of the above and future items.
+
 Available in Mac OS X v10.0 and later.
+
+=back
 
 =head2 Directory
 
-=head3 NSApplicationDirectory
+=over 4
+
+=item NSApplicationDirectory
 
 Supported applications (/Applications).
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSDemoApplicationDirectory
+=item NSDemoApplicationDirectory
 
 Unsupported applications and demonstration versions.
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSDeveloperApplicationDirectory
+=item NSDeveloperApplicationDirectory
 
 Developer applications (/Developer/Applications).
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSAdminApplicationDirectory
+=item NSAdminApplicationDirectory
 
 System and network administration applications.
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSLibraryDirectory
+=item NSLibraryDirectory
 
 Various user-visible documentation, support, and configuration files (/Library).
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSDeveloperDirectory
+=item NSDeveloperDirectory
 
 Developer resources (/Developer).
 Deprecated: Beginning with Xcode 3.0, developer tools can be installed in any location.
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSUserDirectory
+=item NSUserDirectory
 
 User home directories (/Users).
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSDocumentationDirectory
+=item NSDocumentationDirectory
 
 Documentation.
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSDocumentDirectory
+=item NSDocumentDirectory
 
 Document directory.
+
 Available in Mac OS X v10.2 and later.
 
-=head3 NSCoreServiceDirectory
+=item NSCoreServiceDirectory
 
 Location of core services (System/Library/CoreServices).
+
 Available in Mac OS X v10.4 and later.
 
-=head3 NSAutosavedInformationDirectory
+=item NSAutosavedInformationDirectory
 
-Location of user’s autosaved documents Documents/Autosaved
+Location of user's autosaved documents Documents/Autosaved
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSDesktopDirectory
+=item NSDesktopDirectory
 
-Location of user’s desktop directory.
+Location of user's desktop directory.
+
 Available in Mac OS X v10.4 and later.
 
-=head3 NSCachesDirectory
+=item NSCachesDirectory
 
 Location of discardable cache files (Library/Caches).
+
 Available in Mac OS X v10.4 and later.
 
-=head3 NSApplicationSupportDirectory
+=item NSApplicationSupportDirectory
 
 Location of application support files (Library/Application Support).
+
 Available in Mac OS X v10.4 and later.
 
-=head3 NSDownloadsDirectory
+=item NSDownloadsDirectory
 
-Location of the user’s downloads directory.
+Location of the user's downloads directory.
+
 Available in Mac OS X v10.5 and later.
 
-=head3 NSInputMethodsDirectory
+=item NSInputMethodsDirectory
 
 Location of Input Methods (Library/Input Methods)
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSMoviesDirectory
+=item NSMoviesDirectory
 
 Location of user's Movies directory (~/Movies)
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSMusicDirectory
+=item NSMusicDirectory
 
 Location of user's Movies directory (~/Music)
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSPicturesDirectory
+=item NSPicturesDirectory
 
 Location of user's Movies directory (~/Pictures)
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSPrinterDescriptionDirectory
+=item NSPrinterDescriptionDirectory
 
 Location of system's PPDs directory (Library/Printers/PPDs)
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSSharedPublicDirectory
+=item NSSharedPublicDirectory
 
 Location of user's Public sharing directory (~/Public)
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSPreferencePanesDirectory
+=item NSPreferencePanesDirectory
 
 Location of the PreferencePanes directory for use with System Preferences (Library/PreferencePanes)
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSItemReplacementDirectory
+=item NSItemReplacementDirectory
 
 For use with NSFileManager method URLForDirectory:inDomain:appropriateForURL:create:error:
+
 Available in Mac OS X v10.6 and later.
 
-=head3 NSAllApplicationsDirectory
+=item NSAllApplicationsDirectory
 
 All directories where applications can occur.
+
 Available in Mac OS X v10.0 and later.
 
-=head3 NSAllLibrariesDirectory
+=item NSAllLibrariesDirectory
 
 All directories where resources can occur.
+
 Available in Mac OS X v10.0 and later.
 
-=head2 EXPORT
+=back
+
+=head1 EXPORT
 
 None by default. Functions and constants can either be imported individually or
 in sets grouped by tag names. The tag names are:
