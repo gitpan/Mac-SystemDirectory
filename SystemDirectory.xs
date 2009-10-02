@@ -155,3 +155,32 @@ FindDirectory(constant, mask=NSUserDomainMask)
     }
     XSRETURN_EMPTY;
 
+void
+HomeDirectory()
+
+  ALIAS:
+    Mac::SystemDirectory::HomeDirectory      = 0
+    Mac::SystemDirectory::TemporaryDirectory = 1
+
+  PREINIT:
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    NSString *path;
+
+  PPCODE:
+    switch (ix) {
+        case 0:
+            path = NSHomeDirectory();
+            break;
+        case 1:
+            path = NSTemporaryDirectory();
+            break;
+        default:
+            [pool release];
+            croak("panic: unexpected ix: %d", (int)ix);
+    }
+
+    ST(0) = path ? sv_2mortal(newSV_NSString(path)) : &PL_sv_undef;
+
+    [pool release];
+    XSRETURN(1);
+

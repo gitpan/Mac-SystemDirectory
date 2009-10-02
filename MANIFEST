@@ -14,4 +14,8 @@ MANIFEST			This list of files
 META.yml
 README
 SystemDirectory.xs
-t/Mac-SystemDirectory.t
+t/000_load.t
+t/005_import.t
+t/010_usage.t
+t/020_basic.t
+xt/000_pod.t

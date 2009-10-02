@@ -8,7 +8,9 @@ SYNOPSIS
       use Mac::SystemDirectory qw[:all];
   
 
-      print FindDirectory(NSDocumentDirectory);
+      $path = FindDirectory(NSDocumentDirectory);
+      $path = HomeDirectory();
+      $path = TemporaryDirectory();
 
 
 DESCRIPTION
@@ -20,6 +22,11 @@ FUNCTIONS
 
     FindDirectory(Directory [, DomainMask])
 
+        Creates a list of path strings for the specified directories in the
+        specified domains. The list is in the order in which you should
+        search the directories.
+
+
         *Usage*
 
 
@@ -30,12 +37,12 @@ FUNCTIONS
         *Arguments*
 
 
-        "Directory"
+        Directory
 
             "Directory" constant.
 
 
-        "DomainMask" (optional)
+        DomainMask (optional)
 
             "DomainMask" constant. Defaults to "NSUserDomainMask".
 
@@ -49,9 +56,49 @@ FUNCTIONS
         scalar context and an empty list in a list context.
 
 
+    HomeDirectory()
+
+        Path to the current user's home directory.
+
+
+        *Usage*
+
+
+            $path = HomeDirectory();
+
+
+        *Returns*
+
+
+        A string containing the path of the current user's home directory.
+
+
+    TemporaryDirectory()
+
+        Path to the current user's temporary directory.
+
+
+        *Usage*
+
+
+            $path = TemporaryDirectory();
+
+
+        *Returns*
+
+
+        A string containing the path of the temporary directory for the
+        current user. If no such directory is currently available, returns
+        undef.
+
+
 CONSTANTS
 
   DomainMask
+
+    Bitmask constants that identify the file-system domain (User, System,
+    Local, Network) or all domains.
+
 
     NSUserDomainMask
 
@@ -97,6 +144,10 @@ CONSTANTS
 
 
   Directory
+
+    Constants that identify the name or type of directory (for example,
+    Library, Documents, or Applications).
+
 
     NSApplicationDirectory
 

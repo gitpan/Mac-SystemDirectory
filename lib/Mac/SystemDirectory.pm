@@ -5,8 +5,8 @@ use strict;
 use warnings;
 
 BEGIN {
-    our $VERSION     = '0.02_02';
-    our @EXPORT_OK   = ( 'FindDirectory' );
+    our $VERSION     = '0.02';
+    our @EXPORT_OK   = ('FindDirectory', 'HomeDirectory', 'TemporaryDirectory');
 
     require XSLoader;
     XSLoader::load('Mac::SystemDirectory', $VERSION);
@@ -32,7 +32,9 @@ Mac::SystemDirectory - Locate Mac OS X Standard System Directories
 
   use Mac::SystemDirectory qw[:all];
   
-  print FindDirectory(NSDocumentDirectory);
+  $path = FindDirectory(NSDocumentDirectory);
+  $path = HomeDirectory();
+  $path = TemporaryDirectory();
 
 =head1 DESCRIPTION
 
@@ -44,6 +46,9 @@ Locate Mac OS X Standard System Directories
 
 =item FindDirectory(Directory [, DomainMask])
 
+Creates a list of path strings for the specified directories in the specified 
+domains. The list is in the order in which you should search the directories.
+
 I<Usage>
 
     $path  = FindDirectory(NSApplicationDirectory);
@@ -53,11 +58,11 @@ I<Arguments>
 
 =over 4
 
-=item C<Directory>
+=item Directory
 
 L</Directory> constant.
 
-=item C<DomainMask> (optional)
+=item DomainMask (optional)
 
 L</DomainMask> constant. Defaults to C<NSUserDomainMask>.
 
@@ -70,11 +75,38 @@ directory. In list context it returns all matching directories.
 If no directories are found, undef is returned in a scalar context and an 
 empty list in a list context.
 
+=item HomeDirectory()
+
+Path to the current user's home directory.
+
+I<Usage>
+
+    $path = HomeDirectory();
+
+I<Returns>
+
+A string containing the path of the current user's home directory.
+
+=item TemporaryDirectory()
+
+Path to the current user's temporary directory.
+
+I<Usage>
+
+    $path = TemporaryDirectory();
+
+I<Returns>
+
+A string containing the path of the temporary directory for the current user. 
+If no such directory is currently available, returns undef.
+
 =back
 
 =head1 CONSTANTS
 
 =head2 DomainMask
+
+Bitmask constants that identify the file-system domain (User, System, Local, Network) or all domains.
 
 =over 4
 
@@ -111,6 +143,8 @@ Available in Mac OS X v10.0 and later.
 =back
 
 =head2 Directory
+
+Constants that identify the name or type of directory (for example, Library, Documents, or Applications).
 
 =over 4
 

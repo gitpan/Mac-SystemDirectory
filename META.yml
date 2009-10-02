@@ -4,6 +4,7 @@ author:
   - 'Christian Hansen, <chansen@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
+  Test::More: 0.86
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -18,8 +19,9 @@ no_index:
   directory:
     - inc
     - t
+    - xt
 requires:
   perl: 5.6.0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02_02
+version: 0.02
