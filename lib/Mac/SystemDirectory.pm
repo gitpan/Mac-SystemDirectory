@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 BEGIN {
-    our $VERSION     = '0.02';
+    our $VERSION     = '0.03';
     our @EXPORT_OK   = ('FindDirectory', 'HomeDirectory', 'TemporaryDirectory');
 
     require XSLoader;
@@ -319,6 +319,7 @@ in sets grouped by tag names. The tag names are:
 =head1 SEE ALSO
 
 L<http://developer.apple.com/mac/library/DOCUMENTATION/Cocoa/Conceptual/LowLevelFileMgmt/Articles/StandardDirectories.html>
+L<http://developer.apple.com/mac/library/documentation/MacOSX/Conceptual/BPFileSystem/BPFileSystem.html>
 
 =head1 AUTHOR
 
